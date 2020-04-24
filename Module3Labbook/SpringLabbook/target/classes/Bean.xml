@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<bean id="e" class="lab1.Employee">
+		<property name="id" value="12345" />
+		<property name="name" value="Harriet" />
+		<property name="salary" value="40000" />
+		<property name="bu" value="PES-BU" />
+		<property name="age" value="30" />
+		
+	</bean>
+	
+	<bean id="em" class="lab2.Employee">
+		<property name="id" value="12345" />
+		<property name="name" value="Harriet" />
+		<property name="salary" value="40000" />
+		<property name="age" value="30" />
+		<property name="sbu" ref="sb" />
+	</bean>
+	<bean id="sb" class="lab2.Sbu">
+		<property name="sbuId" value="PES-BU" />
+		<property name="sbuName" value="Product Engineering Services" />
+		<property name="sbuHead" value="Kiran Rao" />
+	</bean>
+	<bean id="em1" class="lab3.Employee">
+		<property name="eid" value="12345" />
+		<property name="ename" value="Harriet" />
+		<property name="salary" value="40000" />
+	</bean>
+	<bean id="em2" class="lab3.Employee">
+		<property name="eid" value="12346" />
+		<property name="ename" value="Harry" />
+		<property name="salary" value="40280" />
+	</bean>
+	<bean id="em3" class="lab3.Employee">
+		<property name="eid" value="12346" />
+		<property name="ename" value="Hellen" />
+		<property name="salary" value="46000" />
+	</bean>
+	
+	<bean id="sbu" class="lab3.Sbu">
+		<property name="sbuCode" value="PES-BU" />
+		<property name="sbuName" value="Product Engineering Services" />
+		<property name="sbuHead" value="Kiran Rao" />
+		<property name="empList">
+		<list>
+		<ref bean="em1"/>
+		<ref bean="em2"/>
+		<ref bean="em3"/>
+		</list></property>
+	</bean>
+</beans>

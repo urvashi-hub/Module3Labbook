@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<bean id="sbu" class="com.cg.lab1.bean.SBU"
+		autowire="constructor">
+		<constructor-arg value="12" />
+		<constructor-arg value="Jonas" />
+		<constructor-arg value="Patrick" />
+		<constructor-arg name="empList">
+			<list>
+				<ref bean="emp1" />
+				<ref bean="emp2" />
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="emp1" class="com.cg.lab1.bean.Employee" >
+		<constructor-arg  value="1005"/>
+		<constructor-arg  value="Nick"/>
+		<constructor-arg  value="60000"/>
+	</bean>
+	<bean id="emp2" class="com.cg.lab1.bean.Employee" >
+		<constructor-arg  value="1006"/>
+		<constructor-arg  value="Joker"/>
+		<constructor-arg  value="70000"/>
+	</bean>
+</beans>
